@@ -4,7 +4,7 @@
 
 ###### This application is designed to  ...
 
-#### Technologies: `C#`, `MS Access'
+#### Technologies: `C#`, `MS Access`
 
 ## Features
 
