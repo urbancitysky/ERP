@@ -1,2 +1,2 @@
-##ERP UI design
+## HR Management
 ![UI](https://github.com/urbancitysky/ERP/tree/master/Screenshot/UI.png)

@@ -13,16 +13,19 @@ using System.IO;
 
 namespace FlatUI
 {
+    
     public partial class Form1 : Form
     {
-        private OleDbConnection connection = new OleDbConnection();
+        int TogMove;
+        int MValX;
+        int MValY;
 
+        private OleDbConnection connection = new OleDbConnection();
         public Form1()
         {
             InitializeComponent();
             /*
             string myConnection = "datasource = localhost; port = 3306; username = root; password=";
-
             try
             {
                 
@@ -40,31 +43,49 @@ namespace FlatUI
                 MessageBox.Show("not connect");
             }
             */
-        }
 
-
-        private void btn1_Click(object sender, EventArgs e)
-        {
-            if (!panel3.Controls.Contains(ucDash.Instance))
+            if (!panel3.Controls.Contains(ucHR.Instance))
             {
-                panel3.Controls.Add(ucDash.Instance);
-                ucDash.Instance.Dock = DockStyle.Fill;
-                ucDash.Instance.BringToFront();
+                panel3.Controls.Add(ucHR.Instance);
+                ucHR.Instance.Dock = DockStyle.Fill;
+                ucHR.Instance.BringToFront();
             }
             else
-                ucDash.Instance.BringToFront();
+            {
+                ucHR.Instance.BringToFront();
+                
+            }
+
+            
+
         }
 
+        //HR page
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            if (!panel3.Controls.Contains(ucHR.Instance))
+            {
+                panel3.Controls.Add(ucHR.Instance);
+                ucHR.Instance.Dock = DockStyle.Fill;
+                ucHR.Instance.BringToFront();
+            }
+            else
+                ucHR.Instance.BringToFront();
+        }
+        
+        //Exit program
         private void label3_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Minimize the screen
         private void label4_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;            
+            WindowState = FormWindowState.Minimized;
         }
 
+        //Sales page
         private void btn2_Click(object sender, EventArgs e)
         {
             if (!panel3.Controls.Contains(ucSales.Instance))
@@ -76,6 +97,7 @@ namespace FlatUI
             else
                 ucSales.Instance.BringToFront();
         }
+
         private void btn3_Click(object sender, EventArgs e)
         {
             
@@ -85,6 +107,31 @@ namespace FlatUI
         private void button1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
+
+        private void panel4_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void panel4_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
         }
     }
 }
