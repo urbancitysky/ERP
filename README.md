@@ -1,6 +1,6 @@
 # Welcome to HR Management Tools 
 
-![alt text](https://github.com/urbancitysky/eCom/blob/master/image/logo.png "Logo")
+![alt text](https://github.com/urbancitysky/Resource/blob/master/images/logo.png "Logo")
 
 ###### This application is designed to  ...
 
