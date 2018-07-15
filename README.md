@@ -1,19 +1,17 @@
 # Welcome to HR Management Tools 
 
-![alt text](https://github.com/urbancitysky/Resource/blob/master/images/logo.png "Logo")
 
-###### This application is designed to  ...
-
-#### Technologies: `C#`, `MS Access`
+#### Technologies: `C# WPF`, `MS Access`
 
 ## Features
 
-+ Employee 
++ Name list of on duty Employees 
++ 
 
 ## Document
  
 + [Document](http://)
-+ [Projcect site](http://)
++ [Projcect Site](http://)
 + [User Manual](http://) 
  
 
